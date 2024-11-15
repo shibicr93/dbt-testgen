@@ -11,7 +11,7 @@
 {% endmacro %}
 
 {% macro bigquery__sql_agg_array(colname) %}
-    {{ return("array_agg(CAST(" ~ adapter.quote(colname) ~ " AS STRING)) IGNORE NULLS") }}
+    {{ return("array_agg(CAST(" ~ adapter.quote(colname) ~ " AS STRING) IGNORE NULLS)") }}
 {% endmacro %}
 
 {% macro databricks__sql_agg_array(colname) %}
